@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block content %}
+      <div class="nav">
+        <h2>– Football Club {{ club.name}} –</h2>
+        <table class="content-nav">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>player</td>
+              <td>positsion</td>
+              <td>nationality</td>
+              <td>
+                transfer value, <br />
+                mill. euro
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="content">
+        <table class="players">
+          {% for player in players %}
+          <tr>
+            <td>{{forloop.counter }}</td>
+            <td>{ player.name }}</td>
+            <td>{{ player.position }}</td>
+            <td>{{ player.country }}</td>
+            <td>{{ player.price }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae soluta
+          sequi quia eos cupiditate rerum accusantium odit enim, expedita,
+          architecto error dignissimos voluptatibus. Nisi illo, maiores fugit
+          amet neque eveniet!
+        </p>
+      </div>
+{%  endblock %}
